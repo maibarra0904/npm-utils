@@ -5,6 +5,7 @@ export const getChatResponse = async (prompt, apiKey) => {
     console.log('No has ingresado tu API Key.');
     return;
   }
+
   const url = 'https://api.openai.com/v1/chat/completions';
 
   try {
@@ -25,8 +26,7 @@ export const getChatResponse = async (prompt, apiKey) => {
     return response.data.choices[0].message.content;
 
   } catch (error) {
-    console.log(error)
+    console.log(error);
     console.log('Ocurrió un error al procesar tu solicitud.');
-    
   }
-}
+};
